@@ -17,12 +17,12 @@ class Square:
         return self.has_piece() and self.piece.color == color
 
     # Returns True if there is a piece AND if it's a different color
-    def has_rival_piece(self, color):
+    def has_enemy_piece(self, color):
         return self.has_piece() and self.piece.color != color
 
     # Returns True if there are no pieces OR if the piece is a different color
-    def is_empty_or_rival(self, color):
-        return self.is_empty() or self.has_rival_piece(color)
+    def is_empty_or_enemy(self, color):
+        return self.is_empty() or self.has_enemy_piece(color)
 
     @staticmethod
     def in_range(*args):

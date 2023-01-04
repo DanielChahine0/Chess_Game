@@ -31,6 +31,7 @@ class Main:
 
         # Setting up a pygame file
         while True:
+            # Show methods
             game.show_bg(screen)
             game.show_pieces(screen)
             game.show_moves(screen)
