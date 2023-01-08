@@ -84,6 +84,9 @@ class Board:
                         # Append new valid move
                         piece.add_move(move)
 
+        def straight_line_moves(incrs):
+            pass
+
         # If the piece is a Pawn
         if isinstance(piece, Pawn):
             pawn_moves()
@@ -93,11 +96,34 @@ class Board:
             knight_moves()
 
         elif isinstance(piece, Bishop):
-            pass
+            straight_line_moves([
+                (-1, 1),
+                (-1, -1),
+                (1, 1),
+                (1, -1)
+            ])
+
         elif isinstance(piece, Rook):
-            pass
+            straight_line_moves([
+                (-1, 0),  # up
+                (0, 1),   # right
+                (1, 0),   # down
+                (0, -1)   # left
+
+            ])
+
         elif isinstance(piece, Queen):
-            pass
+            straight_line_moves([
+                (-1, 1),
+                (-1, -1),
+                (1, 1),
+                (1, -1),
+                (-1, 0),  # up
+                (0, 1),  # right
+                (1, 0),  # down
+                (0, -1)  # left
+            ])
+
         elif isinstance(piece, King):
             pass
 
